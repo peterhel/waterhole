@@ -1,0 +1,22 @@
+{
+  "name": "waterhole",
+  "version": "1.0.4",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "waterhole": "bin/waterhole.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "diff2html": "^3.4.34",
+    "diff2html-cli": "^5.2.9",
+    "htmltidy2": "^1.1.1",
+    "prettier": "^2.8.6",
+    "puppeteer": "^19.7.5"
+  }
+}
