@@ -13,9 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "diff2html": "^3.4.34",
     "diff2html-cli": "^5.2.9",
-    "htmltidy2": "^1.1.1",
     "prettier": "^2.8.6",
     "puppeteer": "^19.7.5"
   }

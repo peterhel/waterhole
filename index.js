@@ -1,6 +1,5 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs';
-import { tidy } from 'htmltidy2'
 import { exec } from 'node:child_process'
 import prettier from 'prettier';
 
@@ -62,8 +61,11 @@ async function logRequest(interceptedRequest) {
 
     await browser.close();
 
-    const cmd = await new Promise(resolve => exec('diff -u index-1.html index-2.html | npx diff2html -i stdin', resolve));
-
+    const [err, res] = await new Promise(resolve => exec('diff -u index-1.html index-2.html | npx diff2html -i stdin', (x, y) => resolve([x,y])));
+    
+    if(err) {
+       console.error(err) 
+    }
 
     // npx diff2html -i stdin
     // diff -u index-1.html index-2.html | npx diff2html -i stdin
